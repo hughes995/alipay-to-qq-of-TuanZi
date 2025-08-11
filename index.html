@@ -10,6 +10,7 @@
   <div id="app" class="w-full max-w-lg bg-white rounded-2xl shadow p-6">
     <h1 class="text-xl font-semibold mb-4">支付后加入QQ群</h1>
     <div id="step-pay">
+      <p class="mb-2 text-red-600 font-medium">付款时请备注QQ昵称，用于确认</p>
       <p class="mb-2">请用支付宝扫描下方二维码完成支付（¥9.90）。</p>
       <div class="bg-gray-100 p-4 rounded mb-4 flex justify-center">
         <img src="微信图片_20250811093258_188.jpg" alt="支付宝收款码" class="w-64 h-64 object-contain"/>
@@ -22,6 +23,9 @@
         <img src="2.jpg" alt="QQ群二维码" class="w-64 h-64 object-contain"/>
       </div>
       <a href="2.jpg" target="_blank" rel="noreferrer" class="inline-block mt-2 px-4 py-2 border rounded">打开 QQ 群二维码</a>
+      <div class="mt-4">
+        <button id="btn-back" class="px-4 py-2 bg-gray-400 text-white rounded-lg">返回</button>
+      </div>
     </div>
   </div>
 
@@ -29,6 +33,11 @@
     document.getElementById('btn-paid').addEventListener('click', function() {
       document.getElementById('step-pay').classList.add('hidden');
       document.getElementById('step-qq').classList.remove('hidden');
+    });
+
+    document.getElementById('btn-back').addEventListener('click', function() {
+      document.getElementById('step-qq').classList.add('hidden');
+      document.getElementById('step-pay').classList.remove('hidden');
     });
   </script>
 </body>
