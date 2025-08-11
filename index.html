@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>支付后加入QQ群</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gray-50 p-6">
+  <div id="app" class="w-full max-w-lg bg-white rounded-2xl shadow p-6">
+    <h1 class="text-xl font-semibold mb-4">支付后加入QQ群</h1>
+    <div id="step-pay">
+      <p class="mb-2">请用支付宝扫描下方二维码完成支付（¥9.90）。</p>
+      <div class="bg-gray-100 p-4 rounded mb-4 flex justify-center">
+        <img src="微信图片_20250811093258_188.jpg" alt="支付宝收款码" class="w-64 h-64 object-contain"/>
+      </div>
+      <button id="btn-paid" class="px-4 py-2 bg-blue-500 text-white rounded-lg">我已付款</button>
+    </div>
+    <div id="step-qq" class="hidden">
+      <p class="mb-2">感谢您的支付！请扫码加入QQ群：</p>
+      <div class="bg-gray-100 p-4 rounded mb-4 flex justify-center">
+        <img src="2.jpg" alt="QQ群二维码" class="w-64 h-64 object-contain"/>
+      </div>
+      <a href="2.jpg" target="_blank" rel="noreferrer" class="inline-block mt-2 px-4 py-2 border rounded">打开 QQ 群二维码</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('btn-paid').addEventListener('click', function() {
+      document.getElementById('step-pay').classList.add('hidden');
+      document.getElementById('step-qq').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
